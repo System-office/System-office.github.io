@@ -5,22 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System-office</title>
     <link rel="icon" href="soicon.png">
-    <style>
-        body {
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-    </style>
 </head>
 <body>
-    <script>
-        fetch('https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US')
-            .then(response => response.json())
-            .then(data => {
-                let imageUrl = 'https://www.bing.com' + data.images[0].url;
-                document.body.style.backgroundImage = `url(${imageUrl})`;
-            });
-    </script>
     <h1>
         嗨，别来无恙啊 这里是System-office的个人网站
     </h1>
