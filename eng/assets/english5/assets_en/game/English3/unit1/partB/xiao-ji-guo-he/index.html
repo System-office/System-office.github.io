@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小鸡过河</title>
+  <link rel="stylesheet" href="../../../../template/xiao-ji-guo-he/index.css">
+  <style>
+    #topic img {
+      width: 19vw;
+    }
+    #list-box li img {
+      width: 17vw;
+    }
+    #list-box li:nth-child(3) {
+      left: 46vw;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <!-- 声音 -->
+    <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+    <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+    <!-- 背景 -->
+    <img class="bg" width="100%" src="../../../../template/xiao-ji-guo-he/images/bg.png" alt="">
+    <!-- 云 -->
+    <img class="cloud cloud1" src="../../../../template/xiao-ji-guo-he/images/yun1.png" alt="">
+    <img class="cloud cloud2" src="../../../../template/xiao-ji-guo-he/images/yun2.png" alt="">
+    <div id="rule">
+      <button class="start-btn" onclick="start()"></button>
+      <img src="../../../../template/xiao-ji-guo-he/images/rule.png" alt="">
+    </div>
+     <!-- 结束 -->
+     <div id="over-box">
+      <div id="panel">
+        <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+        <p id="over-time">时间：</p>
+        <p id="over-integral">得分：</p>
+        <a class="refresh" href="javascript:location.reload();">
+          <img width="100%" src="../../../../template/images/refresh.png" alt="">
+        </a>
+        <div id="mistakes">
+
+        </div>
+      </div>
+    </div>
+    <div id="interface">
+      <div class="information">
+        <span id="HP">3</span>
+        <span id="grade">0</span>
+        <span id="count-down">40</span>
+      </div>
+      <div id="topic"></div>
+      <div class="option-box">
+        <!-- 小鸡 -->
+        <div id="chook-box">
+          <img id="chook" src="../../../../template/xiao-ji-guo-he/images/chook1.png" alt="">
+        </div>
+        <!-- 成功 -->
+        <img id="colour-bar" src="../../../../template/xiao-ji-guo-he/images/colour-bar.png" alt="">
+        <ul id="list-box"></ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 时间
+    var totalTime = 50
+    var data = [
+    {
+      topic: './images/Doyouknowher-.png', // 题目
+      options: [ // 选项
+        {
+          title: './images/Yes.ShesaChineseteacher..png',
+          right: true // 是否正确
+        },
+        {
+          title: './images/ShesaChineseteacher..png',
+          right: false
+        },
+        {
+          title: './images/Sheispolite..png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/WhatsAmylike-.png',
+      options: [
+        {
+          title: './images/Sheispolite..png',
+          right: true
+        },
+        {
+          title: './images/Yes,heis..png',
+          right: false
+        },
+        {
+          title: './images/ShelikesEnglish..png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/Ishetall-.png',
+      options: [
+        {
+          title: './images/Yes,heis..png',
+          right: true
+        },
+        {
+          title: './images/No,itisnt..png',
+          right: false
+        },
+        {
+          title: './images/Shesstrict..png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/Whosyourartteacher-.png',
+      options: [
+        {
+          title: './images/ShesMrsWang..png',
+          right: true
+        },
+        {
+          title: './images/Shesstrict..png',
+          right: false
+        },
+        {
+          title: './images/Yes,sheis..png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/Isshequiet-.png',
+      options: [
+        {
+          title: './images/Yes,sheis..png',
+          right: true
+        },
+        {
+          title: './images/Shesstrict..png',
+          right: false
+        },
+        {
+          title: './images/No,sheisquiet..png',
+          right: false
+        }
+      ]
+    }
+  ]
+  </script>
+  <script src="../../../../template/xiao-ji-guo-he/index.js"></script>
+</body>
+</html>

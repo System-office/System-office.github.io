@@ -1,0 +1,130 @@
+body {
+    background: transparent;
+}
+.topic{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+.lyl{
+    padding: 5% 0;
+}
+.show{
+    position: relative;
+    max-width: 1280px;
+    width: 100%;
+    height: 100%;
+}
+.drag ul li{
+    position: absolute;
+    width: 27%;
+    max-width: 340px;
+    left: 45%;
+    text-align: center;
+    max-width: 340px;
+}
+
+.drag ul li:nth-child(1){
+    top: 10%;
+    width: 11%;
+    max-width: 140px;
+    left: 47%;
+}
+
+.drag ul li:nth-child(2){
+    top: 10%;
+    width: 11%;
+    max-width: 140px;
+    left: 60%;
+}
+
+.drag ul li:nth-child(3){
+    top: 21.5%;
+}
+.drag ul li:nth-child(4){
+    top: 33.5%;
+}
+.drag ul li:nth-child(5){
+    top: 45.5%;
+}
+.drag ul li:nth-child(6){
+    top: 57.5%;
+}
+.drag ul li:nth-child(7){
+    top: 69.5%;
+   
+}
+.drag ul li:nth-child(8){
+    top: 81.5%;
+    width: 29.688%;
+    max-width: 380px;
+    left: 43.5%;
+}
+.drag ul li:nth-child(9){
+    top: 93%;
+}
+
+
+.drag img{
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+.dashed .dashed_box{
+    position: absolute;
+    top: 12%;
+    left: 6%;
+    width: 32%;
+    height: 9%;
+    background: rgba(0, 0, 0, 0);
+}
+.dashed .dashed_box:nth-child(2){
+    top: 22.5%;
+}
+.dashed .dashed_box:nth-child(3){
+    top: 33%;
+}
+.dashed .dashed_box:nth-child(4){
+    top: 43.5%;
+}
+.dashed .dashed_box:nth-child(5){
+    top: 53.8%;
+}
+.dashed .dashed_box:nth-child(6){
+    top: 64.2%;
+}
+.dashed .dashed_box:nth-child(7){
+    top: 74.6%;
+}
+.dashed .dashed_box:nth-child(8){
+    top: 85.3%;
+}
+
+.dashed .dashed_box:nth-child(9){
+    top: 95.7%;
+}
+
+
+
+.gameBox_btn{
+    width: 15.7%;
+    height: 11%;
+    font-size: 2.5vw;
+    position: absolute;
+}
+.gameBox_reset{
+    top: 64.5%;
+    left: 76%;
+    bottom: auto;
+    background: rgba(0, 0, 0, 0);
+}
+.submit{
+    top: 79%;
+    left: 76%;
+    bottom: auto;
+}
+
+
+

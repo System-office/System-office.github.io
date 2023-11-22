@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小鸡过河</title>
+  <link rel="stylesheet" href="../../../../template/xiao-ji-guo-he/index.css">
+  <style>
+    #topic img {
+      width: 19vw;
+    }
+    #list-box li img {
+      width: 8vw;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <!-- 声音 -->
+    <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+    <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+    <!-- 背景 -->
+    <img class="bg" width="100%" src="../../../../template/xiao-ji-guo-he/images/bg.png" alt="">
+    <!-- 云 -->
+    <img class="cloud cloud1" src="../../../../template/xiao-ji-guo-he/images/yun1.png" alt="">
+    <img class="cloud cloud2" src="../../../../template/xiao-ji-guo-he/images/yun2.png" alt="">
+    <div id="rule">
+      <button class="start-btn" onclick="start()"></button>
+      <img src="../../../../template/xiao-ji-guo-he/images/rule.png" alt="">
+    </div>
+     <!-- 结束 -->
+     <div id="over-box">
+      <div id="panel">
+        <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+        <p id="over-time">时间：</p>
+        <p id="over-integral">得分：</p>
+        <a class="refresh" href="javascript:location.reload();">
+          <img width="100%" src="../../../../template/images/refresh.png" alt="">
+        </a>
+        <div id="mistakes">
+
+        </div>
+      </div>
+    </div>
+    <div id="interface">
+      <div class="information">
+        <span id="HP">3</span>
+        <span id="grade">0</span>
+        <span id="count-down">40</span>
+      </div>
+      <div id="topic"></div>
+      <div class="option-box">
+        <!-- 小鸡 -->
+        <div id="chook-box">
+          <img id="chook" src="../../../../template/xiao-ji-guo-he/images/chook1.png" alt="">
+        </div>
+        <!-- 成功 -->
+        <img id="colour-bar" src="../../../../template/xiao-ji-guo-he/images/colour-bar.png" alt="">
+        <ul id="list-box"></ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 时间
+    var totalTime = 60
+    var data = [
+    {
+      topic: './images/Todaywelllearn___kungfu..png', // 题目
+      options: [ // 选项
+        {
+          title: './images/some.png',
+          right: true // 是否正确
+        },
+        {
+          title: './images/a.png',
+          right: false
+        },
+        {
+          title: './images/_.png.png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/Canyoudo___kungfu-.png',
+      options: [
+        {
+          title: './images/any.png',
+          right: true
+        },
+        {
+          title: './images/some.png',
+          right: false
+        },
+        {
+          title: './images/a.png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/Icanplay_____pipa..png',
+      options: [
+        {
+          title: './images/the.png',
+          right: true
+        },
+        {
+          title: './images/a.png',
+          right: false
+        },
+        {
+          title: './images/_.png.png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/Ican____you..png',
+      options: [
+        {
+          title: './images/help.png',
+          right: true
+        },
+        {
+          title: './images/let.png',
+          right: false
+        },
+        {
+          title: './images/do.png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/Doyou___anewfriend-.png',
+      options: [
+        {
+          title: './images/want.png',
+          right: true
+        },
+        {
+          title: './images/play.png',
+          right: false
+        },
+        {
+          title: './images/water.png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/What___youdo-.png',
+      options: [
+        {
+          title: './images/can.png',
+          right: true
+        },
+        {
+          title: './images/do.png',
+          right: false
+        },
+        {
+          title: './images/want.png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/Pleasesendme__emailatrobin@urfriend.cn..png',
+      options: [
+        {
+          title: './images/an.png',
+          right: true
+        },
+        {
+          title: './images/a.png',
+          right: false
+        },
+        {
+          title: './images/_.png.png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/I____friendlyandfunny..png',
+      options: [
+        {
+          title: './images/am.png',
+          right: true
+        },
+        {
+          title: './images/are.png',
+          right: false
+        },
+        {
+          title: './images/is.png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/I____dosomekungfu..png',
+      options: [
+        {
+          title: './images/can.png',
+          right: true
+        },
+        {
+          title: './images/have.png',
+          right: false
+        },
+        {
+          title: './images/like.png',
+          right: false
+        }
+      ]
+    },
+    {
+      topic: './images/Ican___English..png',
+      options: [
+        {
+          title: './images/speak.png',
+          right: true
+        },
+        {
+          title: './images/sing.png',
+          right: false
+        },
+        {
+          title: './images/say.png',
+          right: false
+        }
+      ]
+    }
+  ]
+  </script>
+  <script src="../../../../template/xiao-ji-guo-he/index.js"></script>
+</body>
+</html>

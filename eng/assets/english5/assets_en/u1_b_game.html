@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>小学英语</title>
+<meta charset=utf-8>
+<meta name="keywords" content="小学英语">
+<meta name="description" content="小学英语">
+<meta name="author" content="本站由杭州翰臣科技有限公司进行全程策划/页面设计/程序开发完成.24小时技术支持——翰臣科技：http://www.68team.com">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+
+
+	<div class="iall un1 uag1">
+		<!-- 背景 -->
+		<img src="images/u1/a/game/bg.png" alt="英语">
+		<img src="images/u1/a/game/bg2.png" alt="英语" class="dyzz xx1">
+		<img src="images/u1/a/game/bg3.png" alt="英语" class="dyzz xx2">
+		<img src="images/u1/a/game/bg4.png" alt="英语" class="dyzz">
+
+		<img src="images/u1/a/game/bg5.png" alt="英语" class="dyzz">
+		<img src="images/u1/a/game/xiong.png" alt="英语" class="dyzz xiong">
+		<img src="images/u1/a/game/bg8.png" alt="英语" class="dyzz">
+		<!-- 分类按钮 -->
+		<ul class="ubtm clearfix alltime">
+			<li data-src='game/English3/unit1/partB/tiankong/index.html' class="act">
+				<img src="images/game/bg3.png"  alt="英语">
+				<img src="images/game/bga3.png"  alt="英语">
+				<img src="images/game/qwyd.png"  alt="英语">
+			</li>
+			<!-- <li data-src='game/English3/unit1/partB/wo-niu-pa/index.html'>
+				<img src="images/game/bg3.png"  alt="英语">
+				<img src="images/game/bga3.png"  alt="英语">
+				<img src="images/game/btna3.png"  alt="英语">
+			</li> -->
+			<li data-src='game/English3/unit1/partB/kong-zhong-da-zhan/index.html'>
+				<img src="images/game/bg3.png"  alt="英语">
+				<img src="images/game/bga3.png"  alt="英语">
+				<img src="images/game/btn2.png"  alt="英语">
+			</li>
+			<li data-src='game/English3/unit1/partB/xiao-ji-guo-he/index.html'>
+				<img src="images/game/bg3.png"  alt="英语">
+				<img src="images/game/bga3.png"  alt="英语">
+				<img src="images/game/btna2.png"  alt="英语">
+			</li>
+		</ul>
+
+		<!-- 游戏主体-->
+		<div class="uagcen">
+			<img src="images/u1/a/game/kbg.png" alt="英语">
+			<div class="ifm">
+				<iframe src="game/English3/unit1/partB/tiankong/index.html" frameborder="0"></iframe>
+			</div>
+		</div>
+
+		<img src="images/u1/a/game/bg7.png" alt="英语" class="dyzz">
+		<img src="images/u1/a/game/xx1.png" alt="英语" class="dyzz gx1 xx1">
+		<img src="images/u1/a/game/xx2.png" alt="英语" class="dyzz gx2 xx2">
+		<img src="images/u1/a/game/ss.png" alt="英语" class="dyzz songshu2">
+		
+		
+		
+		<a href="u1_b.html" class="fh alltime"><img src="images/fh_g.png" alt="英语"><img src="images/fh1.png" alt="英语"></a>
+	</div>
+
+	<audio src="" autoplay class="hidead" ></audio>
+
+
+
+
+
+
+	<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+	<script type='text/javascript' src='js/JR.js'></script>
+
+	<script type="text/javascript">
+
+		$(function(){
+
+			$('.uag1 .xiong').addClass('act');
+			$(".uag1 .songshu2").addClass('act');
+			
+			$('.uag1 .ubtm li').on('click',function(){
+				$(this).stop(true,false).addClass('act ').siblings().stop(true,false).removeClass('act');
+				var src=$(this).attr('data-src');
+				$(".uag1 .uagcen .ifm iframe").stop(true,false).attr({src:src});
+			});
+
+			
+
+		});
+
+	</script>
+</body>
+
+</html>

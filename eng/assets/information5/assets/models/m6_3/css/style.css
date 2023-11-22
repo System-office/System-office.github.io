@@ -1,0 +1,87 @@
+body {
+    background: transparent;
+}
+.topic{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+.lyl{
+    padding: 5% 0;
+}
+.show{
+    position: relative;
+    max-width: 1280px;
+    width: 100%;
+    height: 100%;
+}
+.drag ul li{
+    position: absolute;
+    width: 16%;
+    max-width: 204px;
+    left: 8%;
+    text-align: center;
+    top: 55%;
+}
+
+.drag ul li:nth-child(2){
+    left: 30.5%;
+}
+
+.drag ul li:nth-child(3){
+    left: 54%;
+}
+.drag ul li:nth-child(4){
+    left: 77%;
+}
+
+
+
+.drag img{
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+.dashed .dashed_box{
+    position: absolute;
+    top: 18%;
+    left: 5.6%;
+    width: 20%;
+    height: 30%;
+    background: rgba(0, 0, 0, 0);
+}
+.dashed .dashed_box:nth-child(2){
+    left: 28.5%;
+}
+.dashed .dashed_box:nth-child(3){
+    left: 51.5%;
+}
+.dashed .dashed_box:nth-child(4){
+    left: 74.5%;
+}
+
+
+
+
+.gameBox_btn{
+    width: 15.7%;
+    height: 11%;
+    font-size: 2.5vw;
+    position: absolute;
+}
+.gameBox_reset{
+    top: 79%;
+    left: 53%;
+    bottom: auto;
+    background: rgba(0, 0, 0, 0);
+}
+.submit{
+    top: 79%;
+    left: 28%;
+    bottom: auto;
+}
+
+
+

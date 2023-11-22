@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小鳄鱼洗澡</title>
+  <link rel="stylesheet" href="../../../../template/gao-neng-lie-che/index.css">
+</head>
+<body>
+  <div class="content">
+    <!-- 声音 -->
+    <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+    <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+    <!-- 滚动背景 -->
+    <div class="roll-bg"></div>
+    <!-- 背景 -->
+    <img class="bg" width="100%" src="../../../../template/gao-neng-lie-che/images/bg.png" alt="">
+    <div id="rule">
+      <button class="start-btn" onclick="start()"></button>
+      <img src="../../../../template/gao-neng-lie-che/images/rule.png" alt="">
+    </div>
+    <!-- 结束 -->
+    <div id="over-box">
+      <div id="panel">
+        <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+        <p id="over-time">时间：</p>
+        <p id="over-integral">得分：</p>
+        <a class="refresh" href="javascript:location.reload();">
+          <img width="100%" src="../../../../template/images/refresh.png" alt="">
+        </a>
+        <div id="mistakes">
+        </div>
+      </div>
+    </div>
+
+    <!-- 计分板 -->
+    <div class="information">
+      <span id="HP">3</span>
+      <span id="grade">0</span>
+      <span id="count-down">140</span>
+    </div>
+
+    <!-- 红绿灯 -->
+    <div class="signal">
+      <img id="light-red" src="../../../../template/gao-neng-lie-che/images/red.png" alt="">
+      <img id="light-green" src="../../../../template/gao-neng-lie-che/images/green.png" alt="">
+    </div>
+    <!-- 火车 -->
+    <img id="train" src="../../../../template/gao-neng-lie-che/images/train.png" alt="">
+    <!-- 木板 -->
+    <img id="plank" src="../../../../template/gao-neng-lie-che/images/plank.png" alt="">
+
+    
+    <div id="hint-box"></div>
+    <ul id="list-box"></ul>
+    <div class="btns">
+      <div onclick="ok()"></div>
+      <div onclick="showHint()"></div>
+    </div>
+  </div>
+  <script>
+  // 时间
+  var totalTime = 140
+  var data = [
+    {
+      sound: './sound/s1.mp3',
+      list: [
+        {
+          word: './images/Children.png',
+          order: 1
+        },
+        {
+          word: './images/,.png',
+          order: 2
+        },
+        {
+          word: './images/let’s2.png',
+          order: 3
+        },
+        {
+          word: './images/go.png',
+          order: 4
+        },
+        {
+          word: './images/to.png',
+          order: 5
+        },
+        {
+          word: './images/the.png',
+          order: 6
+        },
+        {
+          word: './images/forest.png',
+          order: 7
+        },
+        {
+          word: './images/!.png',
+          order: 8
+        }
+      ]
+    },
+    {
+      sound: './sound/s2.mp3',
+      list: [
+        {
+          word: './images/Is.png',
+          order: 1
+        },
+        {
+          word: './images/there.png',
+          order: 2
+        },
+        {
+          word: './images/a.png',
+          order: 3
+        },
+        {
+          word: './images/river.png',
+          order: 4
+        },
+        {
+          word: './images/in.png',
+          order: 5
+        },
+        {
+          word: './images/the.png',
+          order: 6
+        },
+        {
+          word: './images/forest.png',
+          order: 7
+        },
+        {
+          word: './images/_.png',
+          order: 8
+        }
+      ]
+    },
+    {
+      sound: './sound/s3.mp3',
+      list: [
+        {
+          word: './images/Is.png',
+          order: 1
+        },
+        {
+          word: './images/there.png',
+          order: 2
+        },
+        {
+          word: './images/a.png',
+          order: 3
+        },
+        {
+          word: './images/lake.png',
+          order: 4
+        },
+        {
+          word: './images/,.png',
+          order: 5
+        },
+        {
+          word: './images/Miss.png',
+          order: 6
+        },
+        {
+          word: './images/White.png',
+          order: 7
+        },
+        {
+          word: './images/_.png',
+          order: 8
+        }
+      ]
+    },
+    {
+      sound: './sound/s4.mp3',
+      list: [
+        {
+          word: './images/Yes2.png',
+          order: 1
+        },
+        {
+          word: './images/,.png',
+          order: 2
+        },
+        {
+          word: './images/there.png',
+          order: 3
+        },
+        {
+          word: './images/is2.png',
+          order: 4
+        },
+        {
+          word: './images/__.png',
+          order: 5
+        }
+      ]
+    },
+    {
+      sound: './sound/s5.mp3',
+      list: [
+        {
+          word: './images/No2.png',
+          order: 1
+        },
+        {
+          word: './images/,.png',
+          order: 2
+        },
+        {
+          word: './images/there.png',
+          order: 3
+        },
+        {
+          word: './images/isn’t.png',
+          order: 4
+        },
+        {
+          word: './images/__.png',
+          order: 5
+        }
+      ]
+    },
+    {
+      sound: './sound/s6.mp3',
+      list: [
+        {
+          word: './images/There2.png',
+          order: 1
+        },
+        {
+          word: './images/are.png',
+          order: 2
+        },
+        {
+          word: './images/some.png',
+          order: 3
+        },
+        {
+          word: './images/small.png',
+          order: 4
+        },
+        {
+          word: './images/boats.png',
+          order: 5
+        },
+        {
+          word: './images/__.png',
+          order: 6
+        }
+      ]
+    },
+    {
+      sound: './sound/s7.mp3',
+      list: [
+        {
+          word: './images/Let’s.png',
+          order: 1
+        },
+        {
+          word: './images/go.png',
+          order: 2
+        },
+        {
+          word: './images/boating.png',
+          order: 3
+        },
+        {
+          word: './images/__.png',
+          order: 4
+        }
+      ]
+    },
+    {
+      sound: './sound/s8.mp3',
+      list: [
+        {
+          word: './images/Is.png',
+          order: 1
+        },
+        {
+          word: './images/there.png',
+          order: 2
+        },
+        {
+          word: './images/a.png',
+          order: 3
+        },
+        {
+          word: './images/lake.png',
+          order: 4
+        },
+        {
+          word: './images/in.png',
+          order: 5
+        },
+        {
+          word: './images/front.png',
+          order: 6
+        },
+        {
+          word: './images/of.png',
+          order: 7
+        },
+        {
+          word: './images/the.png',
+          order: 8
+        },
+        {
+          word: './images/mountain.png',
+          order: 9
+        },
+        {
+          word: './images/_.png',
+          order: 10
+        }
+      ]
+    },
+    {
+      sound: './sound/s9.mp3',
+      list: [
+        {
+          word: './images/There2.png',
+          order: 1
+        },
+        {
+          word: './images/is2.png',
+          order: 2
+        },
+        {
+          word: './images/a.png',
+          order: 3
+        },
+        {
+          word: './images/mouse.png',
+          order: 4
+        },
+        {
+          word: './images/in.png',
+          order: 5
+        },
+        {
+          word: './images/the.png',
+          order: 6
+        },
+        {
+          word: './images/house.png',
+          order: 7
+        },
+        {
+          word: './images/__.png',
+          order: 8
+        }
+      ]
+    },
+    {
+      sound: './sound/s10.mp3',
+      list: [
+        {
+          word: './images/Is.png',
+          order: 1
+        },
+        {
+          word: './images/there.png',
+          order: 2
+        },
+        {
+          word: './images/a.png',
+          order: 3
+        },
+        {
+          word: './images/forest.png',
+          order: 4
+        },
+        {
+          word: './images/in.png',
+          order: 5
+        },
+        {
+          word: './images/the.png',
+          order: 6
+        },
+        {
+          word: './images/park.png',
+          order: 7
+        },
+        {
+          word: './images/_.png',
+          order: 8
+        }
+      ]
+    },
+  ]
+  </script>
+  <script src="../../../../template/gao-neng-lie-che/index.js"></script>
+</body>
+</html>

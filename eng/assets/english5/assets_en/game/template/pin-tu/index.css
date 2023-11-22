@@ -1,0 +1,137 @@
+@import '../css/index.css';
+
+/* 耳机 */
+#headset {
+  width: 9vw;
+  position: absolute;
+  top: 0;
+  right: 10vw;
+  cursor: pointer;
+}
+
+#check-list {
+  /* position: absolute; */
+  /* left: 0;
+  top: 10px; */
+  /* display: flex; */
+}
+#check-list li {
+  width: 10vw;
+  height: 10vw;
+  position: absolute;
+  /* opacity: 0.6; */
+}
+/* 学校 */
+#check-list li:nth-child(1) {
+  width: 18vw;
+  height: 14vw;
+  /* background-color: black; */
+  left: 16vw;
+  top: 14vw;
+}
+/* 邮局 */
+#check-list li:nth-child(2) {
+  width: 18vw;
+  height: 14vw;
+  left: 29vw;
+  top: 4vw;
+  /* background-color: orange; */
+}
+/* 医院 */
+#check-list li:nth-child(3) {
+  width: 18vw;
+  height: 14vw;
+  left: 45vw;
+  top: 4vw;
+  /* background-color: skyblue; */
+}
+/* 公园 */
+#check-list li:nth-child(4) {
+  width: 16vw;
+  height: 14vw;
+  left: 58vw;
+  top: 13vw;
+  /* background-color: yellow; */
+}
+/* 影院 */
+#check-list li:nth-child(5) {
+  width: 18vw;
+  height: 14vw;
+  left: 71vw;
+  top: 13vw;
+  /* background-color: white; */
+}
+/* 科技馆 */
+#check-list li:nth-child(6) {
+  width: 18vw;
+  height: 14vw;
+  left: 43vw;
+  top: 19vw;
+  /* background-color: green; */
+}
+/* 图书馆 */
+#check-list li:nth-child(7) {
+  width: 13vw;
+  height: 12vw;
+  left: 38vw;
+  top: 30vw;
+  /* background-color: lightblue; */
+}
+#check-list li img {
+  width: 12vw;
+  position: absolute;
+  left: 4vw;
+  top: 1vw;
+}
+
+
+#number-list {
+  width: 100%;
+  height: 12vw;
+  display: flex;
+  justify-content: center;
+  /* margin-top: 100px; */
+  margin-top: -12vw;
+}
+#number-list img {
+  width: 12vw;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+}
+.list-item1 {
+  left: 7vw;
+  /* bottom: 3.5vw; */
+}
+.list-item2 {
+  left: 30vw;
+  /* bottom: 2.9vw; */
+}
+.list-item3 {
+  left: 44vw;
+  /* bottom: 2.3vw; */
+}
+.list-item4 {
+  left: 58vw;
+}
+.list-item5 {
+  left: 70.5vw;
+}
+.list-item6 {
+  left: 83.2vw;
+  /* bottom: 2.3vw; */
+}
+.list-item7 {
+  left: 70vw;
+}
+.library-move {
+  animation: libraryMove 1s linear forwards;
+}
+@keyframes libraryMove {
+  0% {
+    transform: translate3d(-20vw, 13vw, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

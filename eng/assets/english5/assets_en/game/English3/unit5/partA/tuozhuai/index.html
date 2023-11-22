@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let`s check</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="content">
+    <div id="rule">
+      <button class="start-btn" onclick="start()"></button>
+      <img src="images/rule.png" alt="">
+    </div>
+    <img width="100%" src="./images/bg.png" alt="">
+    <ul id="check-list">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <div id="number-list">
+      <div class="list-item1" data-flag="1"></div>
+      <div class="list-item2" data-flag="2"></div>
+      <div class="list-item3" data-flag="3"></div>
+      <div class="list-item4" data-flag="4"></div>
+      <div class="list-item5" data-flag="5"></div>
+      <div class="list-item6" data-flag="6"></div>
+    </div>
+
+    <audio id="yes" src="./sound/yes.mp3"></audio>
+    <audio id="try" src="./sound/try.mp3"></audio>
+  </div>
+  <script src="./index.js"></script>
+  <script type='text/javascript' src='../../../../../js/jquery-1.11.3.min.js'></script>
+
+  <script>
+
+    // 开始
+    var rule = document.getElementById('rule') ;
+
+    function start () {
+      var readyGo = document.createElement('audio');
+      readyGo.src = '../../../../template/sound/ready go.mp3';
+      readyGo.play();
+      rule.style.cssText = 'display: none';
+    }
+
+
+  </script>
+</body>
+</html>

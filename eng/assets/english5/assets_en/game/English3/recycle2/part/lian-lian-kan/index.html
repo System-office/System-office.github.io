@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>连连看</title>
+  <link rel="stylesheet" href="../../../../template/lian-lina-kan/index.css">
+  <style>
+    #list-box {
+      width: 72%;
+      top: 22%;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <!-- 声音 -->
+    <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+    <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+    <img class="bg" width="100%" src="../../../../template/lian-lina-kan/images/bg.png" alt="">
+    <div id="rule">
+      <img src="../../../../template/lian-lina-kan/images/rule.png" alt="">
+      <button class="start-btn" onclick="start()"></button>
+    </div>
+    <!-- 结束 -->
+    <div id="over-box">
+      <div id="panel">
+        <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+        <p id="over-time">时间：</p>
+        <p id="over-integral">得分：</p>
+        <a class="refresh" href="javascript:location.reload();">
+          <img width="100%" src="../../../../template/images/refresh.png" alt="">
+        </a>
+        <div id="mistakes">
+
+        </div>
+      </div>
+    </div>
+    <!-- 计分板 -->
+    <div class="information">
+      <span id="HP">3</span>
+      <span id="grade">0</span>
+      <span id="count-down">40</span>
+    </div>
+    <ul id="list-box" style="display: none;"></ul>
+  </div>
+  <script>
+    // 时间
+    var totalTime = 40
+    // 数据
+    var data = [
+      {
+        display1: './images/bike-img.png', // 显示1
+        display2: './images/bike.png', // 显示2
+        num: 2, // 数量
+        matching: 1 // 对应字段
+      },
+      {
+        display1: './images/clock-img.png',
+        display2: './images/clock.png',
+        num: 1,
+        matching: 2
+      },
+      {
+        display1: './images/food-img.png',
+        display2: './images/food.png',
+        num: 1,
+        matching: 3
+      },
+      {
+        display1: './images/infrontof-img.png',
+        display2: './images/infrontof.png',
+        num: 1,
+        matching: 4
+      },
+      {
+        display1: './images/park-img.png',
+        display2: './images/park.png',
+        num: 1,
+        matching: 5
+      },
+      {
+        display1: './images/playbasketball-img.png',
+        display2: './images/playbasketball.png',
+        num: 1,
+        matching: 6
+      },
+      {
+        display1: './images/playping-pong-img.png',
+        display2: './images/playping-pong.png',
+        num: 1,
+        matching: 7
+      },
+      {
+        display1: './images/playthepipa-img.png',
+        display2: './images/playthepipa.png',
+        num: 1,
+        matching: 8
+      }
+    ]
+  </script>
+  <script src="../../../../template/lian-lina-kan/index.js"></script>
+</body>
+</html>

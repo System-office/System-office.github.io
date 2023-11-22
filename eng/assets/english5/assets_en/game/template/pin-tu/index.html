@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>词图配对</title>
+  <link rel="stylesheet" href="../../../../template/ci-tu-pei-dui/index.css">
+</head>
+<body>
+  <div class="content">
+    <!-- 声音 -->
+    <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+    <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+    <!-- 背景 -->
+    <img class="bg" width="100%" src="../../../../template/ci-tu-pei-dui/images/bg.png" alt="">
+    <div id="rule">
+      <button class="start-btn" onclick="start()"></button>
+      <img src="../../../../template/ci-tu-pei-dui/images/rule.png" alt="">
+    </div>
+     <!-- 结束 -->
+    <div id="over-box">
+      <div id="panel">
+        <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+        <p id="over-time">时间：</p>
+        <p id="over-integral">得分：</p>
+        <a class="refresh" href="javascript:location.reload();">
+          <img width="100%" src="../../../../template/images/refresh.png" alt="">
+        </a>
+        <div id="mistakes">
+
+        </div>
+      </div>
+    </div>
+    <div id="interface">
+      <div class="information">
+        <span id="HP">3</span>
+        <span id="grade">0</span>
+        <span id="count-down">40</span>
+      </div>
+      <div id="topic"></div>
+    </div>
+
+    <ul id="check-list">
+      <li>
+      </li>
+      <li>
+      </li>
+      <li>
+      </li>
+      <li>
+      </li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <div id="number-list">
+      <img class="list-item1" src="./images/blackboard.png" data-flag="blackboard" alt="">
+      <img class="list-item2" src="./images/chair.png" data-flag="chair" alt="">
+      <img class="list-item3" src="./images/classroom.png" data-flag="classroom" alt="">
+      <img class="list-item4" src="./images/door.png" data-flag="door" alt="">
+      <img class="list-item5" src="./images/light.png" data-flag="light" alt="">
+      <img class="list-item6" src="./images/picture.png" data-flag="picture" alt="">
+      <img class="list-item7" src="./images/window.png" data-flag="window" alt="">
+      <img class="list-item8" src="./images/desk.png" data-flag="desk" alt="">
+    </div>
+  </div>
+  <script>
+    // 时间
+    var totalTime = 40
+  </script>
+  <script src="../../../../template/ci-tu-pei-dui/index.js"></script>
+</body>
+</html>

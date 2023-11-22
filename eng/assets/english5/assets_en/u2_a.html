@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>小学英语</title>
+<meta charset=utf-8>
+<meta name="keywords" content="小学英语">
+<meta name="description" content="小学英语">
+<meta name="author" content="本站由杭州翰臣科技有限公司进行全程策划/页面设计/程序开发完成.24小时技术支持——翰臣科技：http://www.68team.com">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+	<div class="iall">
+		<!-- 背景 -->
+		<img src="images/u1/a/bg1.png" alt="英语"> 
+		<img src="images/u1/a/bg2.png" alt="英语" class="dyzz xx1"> 
+		<img src="images/u1/a/bg4.png" alt="英语" class="dyzz xx2"> 
+		<img src="images/u1/a/bg3.png" alt="英语" class="dyzz xx3"> 
+		<img src="images/u1/a/bg5.png" alt="英语" class="dyzz "> 
+
+		<!-- 火箭 -->
+		<div class="huuojian">
+			<img src="images/u1/a/hj1.png" alt="英语"> 
+			<img src="images/u1/a/hj2.png" alt="英语"> 
+		</div>
+		<!-- 火箭云 -->
+		<div class="huuojiany ">
+			<img src="images/u1/a/hj3.png" alt="英语"> 
+		</div>
+
+		<img src="images/u1/a/bg6.png" alt="英语" class="dyzz "> 
+		
+		
+		<!-- 单元 -->
+		
+		<a href="u2_a_book.html" class="xq alltime">
+			<img src="images/u1/a/xq1.png" alt="英语"> 
+			<div class="ahuan ahuan1">
+				<img src="images/u1/a/xq1/1.png" alt="英语">  
+			</div>
+			<img src="images/u1/a/xq1_z.png" alt="英语" class="zi"> 
+		</a>
+
+		<a href="u2_a_game.html" class="xq xq2 alltime">
+			<img src="images/u1/a/xq2.png" alt="英语"> 
+			<div class="ahuan ahuan2">
+				<img src="images/u1/a/xq2/1.png" alt="英语">  
+			</div>
+			<img src="images/u1/a/xq2_z.png" alt="英语" class="zi"> 
+		</a>
+
+		<a href="u2_a_cj.html" class="xq xq3 alltime">
+			<img src="images/u1/a/xq3.png" alt="英语"> 
+			<div class="ahuan  ahuan3">
+				<img src="images/u1/a/xq1/1.png" alt="英语">  
+			</div>
+			<img src="images/u1/a/xq3_z.png" alt="英语" class="zi"> 
+		</a>
+	
+
+		
+		
+		<!-- 返回 -->
+		<a href="u2.html" class="fh alltime"><img src="images/fh_g.png" alt="英语"><img src="images/fh1.png" alt="英语"></a>
+
+
+		<!-- 音乐 音频 -->
+		<!-- <audio src="assets_en/audio/xiaye.mp3" class="hidead"  autoplay loop></audio> -->
+
+		
+
+	</div>
+
+	
+
+
+
+
+
+
+	<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+	<script type='text/javascript' src='js/JR.js'></script>
+
+	<script type="text/javascript">
+		$(function(){
+			
+			$('.iall .huuojian').addClass('act');
+			$('.iall .huuojiany').addClass('act');
+			
+
+			// 星球1
+			function fishAni1 () {
+				var fish = 1
+				var fishTotal = 75
+
+				setInterval(function () {
+					fish++
+					if (fish > fishTotal) fish = 1
+					$('.iall .xq .ahuan1 img').attr('src', 'images/u1/a/xq1/'  + fish + '.png')
+				}, 100)
+			}	
+			fishAni1 ();
+
+			// 星球2
+			function fishAni2 () {
+				var fish = 1
+				var fishTotal = 75
+
+				setInterval(function () {
+					fish++
+					if (fish > fishTotal) fish = 1
+					$('.iall .xq .ahuan2 img').attr('src', 'images/u1/a/xq2/'  + fish + '.png')
+				}, 60)
+			}	
+			fishAni2 ();
+			// 星球3
+			function fishAni3 () {
+				var fish = 1
+				var fishTotal = 75
+
+				setInterval(function () {
+					fish++
+					if (fish > fishTotal) fish = 1
+					$('.iall .xq .ahuan3 img').attr('src', 'images/u1/a/xq1/'  + fish + '.png')
+				}, 60)
+			}	
+			fishAni3 ();
+
+			
+
+		})
+	</script>
+</body>
+
+</html>
